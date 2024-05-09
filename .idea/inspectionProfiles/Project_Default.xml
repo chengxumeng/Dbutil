@@ -1,0 +1,8 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="JavadocDeclaration" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ADDITIONAL_TAGS" value="program:,description:数组处理器,author:,create:,SQLException,description:,description:Map,description:LocalDate转换器,Date" />
+    </inspection_tool>
+  </profile>
+</component>
