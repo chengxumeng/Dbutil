@@ -41,6 +41,7 @@ public class SqlExecutor {
         if (connection == null) {
             throw new RuntimeException("Null connection");
         }
+                         // 判断sql语句是否为空 或者为空字符串
         if (sql == null || sql.isEmpty()) {
             throw new RuntimeException("Null SQL statement");
         }
@@ -93,6 +94,9 @@ public class SqlExecutor {
             return ints;
         } catch (SQLException e) {
             throw new RuntimeException("execute fail" + e);
+        } finally {
+            close(ps);
+            close();
         }
     }
 
