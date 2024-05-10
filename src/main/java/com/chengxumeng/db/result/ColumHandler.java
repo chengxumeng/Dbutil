@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 /**
  * @program: dbutils
- * @description:
+ * @description: 列结果集处理器
  * @author: 程序梦
  * @create: 2024-05-08 15:58
  **/
