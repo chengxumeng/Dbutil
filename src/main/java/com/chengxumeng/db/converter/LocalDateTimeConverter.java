@@ -36,6 +36,7 @@ public class LocalDateTimeConverter implements TypeConverter {
     @Override
     public Object convert(Object value, Class<?> filedType) {
         return switch (value) {
+
             case LocalDateTime localDateTime -> localDateTime;
             case LocalDate localDate -> localDate.atStartOfDay();
             case Date sqlData -> sqlData.toLocalDate().atStartOfDay();

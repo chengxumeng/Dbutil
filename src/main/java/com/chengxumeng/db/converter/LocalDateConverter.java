@@ -39,6 +39,7 @@ public class LocalDateConverter implements TypeConverter {
     public Object convert(Object value, Class<?> filedType) {
 
         return switch (value) {
+            // 如果是(本类的处理类型是LocalDate)处理本身就要转换的类型那么久直接返回处理类型
             case LocalDate localDate -> localDate;
             // LocalDateTime 转换为 localData 直接调用 toLocalDate 原理是直接获取 年月日,后面部分直接丢去
             case LocalDateTime localDataTime -> localDataTime.toLocalDate();
