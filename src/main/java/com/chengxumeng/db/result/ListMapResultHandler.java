@@ -1,11 +1,9 @@
 package com.chengxumeng.db.result;
 
-import com.chengxumeng.db.ResultSetHandler;
 import com.chengxumeng.db.util.RowProcessor;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,9 +13,12 @@ import java.util.Map;
  * @create: 2024-05-08 16:17
  **/
 
-public class ListMapResultHandler implements ResultSetHandler<List<Map<String, Object>>> {
+public class ListMapResultHandler extends AbstractListHandler<Map<String, Object>> {
+
+
     @Override
-    public List<Map<String, Object>> handle(ResultSet rs) throws SQLException {
-        return RowProcessor.toList(rs);
+    public Map<String, Object> handleRow(ResultSet rs) throws SQLException {
+        // 直接调用RowProcessor的toMap方法,将结果集转换为Map
+        return RowProcessor.toMap(rs);
     }
 }

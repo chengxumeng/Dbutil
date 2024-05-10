@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * @program: dbutils
- * @description: 行处理工具类, 将一行记录转换为 Array , Map , Bean 对象
+ * @description: 行处理工具类, 将一行记录转换为 ArrayListResultHandler , Map , Bean 对象
  * @author: 程序梦
  * @create: 2024-05-08 10:06
  **/
@@ -99,7 +99,7 @@ public class RowProcessor {
     /**
      * 将一条记录转换成实体
      */
-    public static <T> Object toBean(ResultSet rs, Class<T> beanClass) throws SQLException {
+    public static <T> T toBean(ResultSet rs, Class<T> beanClass) throws SQLException {
 
         return BeanProcessor.crateBean(beanClass, rs);
     }

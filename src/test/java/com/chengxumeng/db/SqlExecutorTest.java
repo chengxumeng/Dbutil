@@ -94,4 +94,11 @@ public class SqlExecutorTest {
         User user = sqlExecutor.executeQuery(sql, new BeanResultHandler<>(User.class));
         System.out.println(user);
     }
+
+    @Test
+    public void testExecuteQueryBeanList() {
+        SqlExecutor sqlExecutor = new SqlExecutor(DbUtil.getConnection());
+        String sql = "select * from user_info";
+        sqlExecutor.executeQuery(sql, new BeanListHandler<>(User.class)).forEach(System.out::println);
+    }
 }
