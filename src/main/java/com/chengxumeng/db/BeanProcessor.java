@@ -38,7 +38,7 @@ public class BeanProcessor {
      *                      5.1:获取结果集的值 来做时间类型转换,因为会要转换因为 Mysql数据库驱动5.0 版本之后返回的时间类型是 "java.util.Date", "java.sql.Date","java.sql.Timestamp", "java.sql.Time"等类型
      *                      而 Mysql驱动8.0版本之后返回的时间类型是 "java.time.LocalDateTime", "java.time.LocalDate", "java.time.LocalTime"等类型要进行时间日期转换
      *                      而且我们转换时的类Converter类是通过SPI机制来实现的,所以我们要通过 ServiceLoader.load(TypeConverter.class)来加载转换器,并且我们使用了策略模式来实现非常符合五大范式
-     *                      5.2:判断属性是否是基本数据类型,如果是基本数据类型并且值是null,那么就不进行赋值,因为基本数据类型是不能为null的,如果为null会报异常,所以我们要判断
+     *                      5.2:判断属性是否是基本数据类型,如果是基本数据类型并且值是null,那么就不进行赋值,因为基本数据类型是不能为null的,如果为null会报错,所以我们要判断
      *                      通过内省的getWriteMethod()方法来获取属性的set方法,然后通过反射的invoke()方法来赋值
      */
     public static <T> T crateBean(Class<T> clazz, ResultSet rs) throws SQLException {

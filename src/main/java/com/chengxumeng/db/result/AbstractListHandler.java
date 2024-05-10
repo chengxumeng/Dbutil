@@ -22,6 +22,7 @@ public abstract class AbstractListHandler<T> implements ResultSetHandler<List<T>
             // 直接调用下面的抽象方法, 由子类来实现不同的处理逻辑(也实现了模版方法模式也满足了开闭原则、单一职责原则、依赖倒置原则、里氏替换原则)
             list.add(handleRow(rs));
         }
+        // 返回 list 集合
         return list;
     }
 
