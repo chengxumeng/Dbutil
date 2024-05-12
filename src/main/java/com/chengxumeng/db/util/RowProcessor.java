@@ -26,7 +26,7 @@ public class RowProcessor {
      * @throws SQLException
      */
     public static Object[] toArray(ResultSet rs) throws SQLException {
-        // 结果集的元数据的列数来定义集合的大小
+        // 结果集的元数据的列数来定义数组的大小
         Object[] result = new Object[rs.getMetaData().getColumnCount()];
         for (int i = 0; i < result.length; i++) {
             // 通过循环来取结果集的参数
@@ -78,7 +78,7 @@ public class RowProcessor {
         for (int i = 1; i <= metaData.getColumnCount(); i++) {
             //metaData.getColumnLabel(i)获取当前列的名称
             String columnLabel = metaData.getColumnLabel(i);
-            //rs.getObject(i)获取当前列的值
+            //rs.getObject(i)获取当前列的值 map直接添加(将列名和值添加到map中)
             map.put(columnLabel, rs.getObject(i));
         }
         return map;
@@ -100,7 +100,7 @@ public class RowProcessor {
      * 将一条记录转换成实体
      */
     public static <T> T toBean(ResultSet rs, Class<T> beanClass) throws SQLException {
-
+        // 返回创建的bean  这里使用了工厂模式但是也不完全算吧因为里面还做了日期类型转换,判断字段
         return BeanProcessor.crateBean(beanClass, rs);
     }
 }

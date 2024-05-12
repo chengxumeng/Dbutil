@@ -49,6 +49,7 @@ public class BeanProcessor {
         PropertyDescriptor[] propertyDescriptors = propertyDescriptor(clazz);
 
         // 循环遍历所有的列
+        // 为什么这里要循环列,它循环的是 select 后面的列,而不是实体类的属性,下面循环属性描述器是用来判断列名和实体类的属性名是否一致
         for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
 
             // 获取列名

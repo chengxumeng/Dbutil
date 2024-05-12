@@ -18,7 +18,7 @@ public class User {
     @Column("u_password")
     private String upassword;
     @Column("u_age")
-    private int uage;
+    private Integer uage;
 
     @Column("deposit")
     private BigDecimal deposit;
@@ -53,7 +53,7 @@ public class User {
         return uage;
     }
 
-    public void setUage(int uage) {
+    public void setUage(Integer uage) {
         this.uage = uage;
     }
 

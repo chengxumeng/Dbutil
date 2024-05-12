@@ -9,7 +9,7 @@ public interface TypeConverter {
     /**
      * 判断是否支持转换
      *
-     * @param clazz
+     * @param type
      * @return
      */
     boolean support(Class<?> type);

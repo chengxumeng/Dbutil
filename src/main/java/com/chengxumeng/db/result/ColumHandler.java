@@ -34,6 +34,7 @@ public class ColumHandler<T> implements ResultSetHandler<T> {
     @Override
     @SuppressWarnings("unchecked")
     public T handle(ResultSet rs) throws SQLException {
+        // 判断结果集是否有数据,有进行下一步操作
         if (rs.next()) {
             if (this.columnName == null) {
                 return (T) RowProcessor.toValue(rs, this.columnIndex);

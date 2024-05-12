@@ -1,6 +1,7 @@
 package com.chengxumeng.db.converter;
 
 import com.chengxumeng.db.TypeConverter;
+
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.*;
@@ -47,6 +48,7 @@ public class DateConverter implements TypeConverter {
     public Object convert(Object value, Class<?> filedType) {
         // 获取字段类型的属性类型
         String type = filedType.getName();
+        // 将时间转换成long类型
         long time = getTime(value);
         return switch (type) {
             case "java.util.Date" -> new Date(time);

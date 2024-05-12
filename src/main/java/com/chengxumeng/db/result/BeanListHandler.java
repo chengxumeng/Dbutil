@@ -16,6 +16,10 @@ public class BeanListHandler<T> extends AbstractListHandler<T> {
 
     private Class<T> beanClass;
 
+    /**
+     * 通过构造方法来初始化
+     * @param beanClass
+     */
     public BeanListHandler(Class<T> beanClass) {
         this.beanClass = beanClass;
     }
